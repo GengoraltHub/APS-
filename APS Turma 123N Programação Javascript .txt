@@ -1,0 +1,32 @@
+//APS Programação Javascript. Turma 123N Aluno: Felipe Andrade da Mota Silveira/ Matrícula: 2017201450
+// Função para verificar se um número é primo
+function isPrime(num) {
+  if (num <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+
+// Função para encontrar os 10 maiores números primos a partir de um número
+function findLargestPrimes() {
+  let num = parseInt(prompt("Digite um número: "));
+  let largestPrimes = [];
+  let count = 0;
+
+  while (count < 10) {
+    if (isPrime(num)) {
+      largestPrimes.push(num);
+      count++;
+    }
+    num++;
+  }
+
+  console.log("Os 10 maiores números primos a partir de", largestPrimes[0], "são:");
+  for (let prime of largestPrimes) {
+    console.log(prime);
+  }
+}
+
+// Chamada da função para encontrar os maiores números primos
+findLargestPrimes();
